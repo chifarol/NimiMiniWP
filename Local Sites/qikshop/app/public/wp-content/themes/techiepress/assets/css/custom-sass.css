@@ -1,0 +1,26 @@
+.sass-test {
+  border: 1px solid #443234;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.scroll::-webkit-scrollbar {
+  height: 3px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  /* box-sizing: border-box; */
+  background-color: #130627;
+  border-radius: 40px;
+  border-color: #130627;
+  border-width: 20px;
+}

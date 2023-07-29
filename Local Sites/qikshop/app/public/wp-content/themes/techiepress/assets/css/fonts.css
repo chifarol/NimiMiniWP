@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Morphend";
+  src: url("public_html/your-site/wp-content/themes/your-theme/fonts/FontName-Regular.ttf")
+    format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-Bold.ttf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-SemiBold.ttf") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-Medium.ttf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-Regular.ttf") format("opentype");
+  font-weight: 400;
+}
