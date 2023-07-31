@@ -1,5 +1,6 @@
 .body {
   font-family: "Montserrat", "sans-serif";
+  font-size: 14px;
 }
 
 .max-h-200 {
@@ -30,4 +31,27 @@
 .size-thumbnail {
   max-width: 100%;
   height: auto;
+}
+
+.cart-customlocation {
+  position: relative;
+}
+
+.scroll::-webkit-scrollbar {
+  height: 3px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  /* box-sizing: border-box; */
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 40px;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 20px;
 }

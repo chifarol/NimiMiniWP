@@ -64,6 +64,7 @@ class ThemeSetup{
         // wp_enqueue_style( 'tailwind-flowbite-css', 'https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css' );
         wp_enqueue_style( 'tailwind', get_stylesheet_directory_uri().'/assets/css/tailwind.css' );
         wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri().'/assets/css/custom.css' );
+        wp_enqueue_style( 'custom-woocommerce-css', get_stylesheet_directory_uri().'/assets/css/custom-woocommerce.css' );
         wp_enqueue_style( 'custom-sass', get_stylesheet_directory_uri().'/assets/css/custom-sass.css' );
         wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri().'/assets/js/custom.js', [], '1.0.0', true );
         wp_enqueue_script( 'alpine-js', 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js', [], '1.0.0', true );

@@ -23,6 +23,7 @@ export default {
       pc89: "#C8951A",
       ivory0: "#F8F7F1",
       ivory1: "#EBE9DE",
+      ivory2b: "#E6E0C0",
       purple7: "#34224E",
       purple8: "#130627",
     },

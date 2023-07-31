@@ -546,12 +546,24 @@ video {
   left: 50%;
 }
 
+.tw-right-\[-25px\] {
+  right: -25px;
+}
+
+.tw-right-\[0\] {
+  right: 0;
+}
+
 .tw-top-\[-28px\] {
   top: -28px;
 }
 
 .tw-top-\[36px\] {
   top: 36px;
+}
+
+.tw-top-\[6px\] {
+  top: 6px;
 }
 
 .tw-z-\[5\] {
@@ -608,6 +620,10 @@ video {
   margin-top: .5rem;
 }
 
+.tw-mt-\[1\.5rem\] {
+  margin-top: 1.5rem;
+}
+
 .tw-mt-\[2rem\] {
   margin-top: 2rem;
 }
@@ -622,6 +638,10 @@ video {
 
 .tw-mt-\[rem\] {
   margin-top: rem;
+}
+
+.\!tw-flex {
+  display: flex !important;
 }
 
 .tw-flex {
@@ -679,6 +699,10 @@ video {
 
 .tw-min-h-\[300px\] {
   min-height: 300px;
+}
+
+.tw-w-\[100px\] {
+  width: 100px;
 }
 
 .tw-w-\[4\.5rem\] {
@@ -778,6 +802,10 @@ video {
   gap: 2rem;
 }
 
+.tw-gap-\[3rem\] {
+  gap: 3rem;
+}
+
 .tw-gap-\[6rem\] {
   gap: 6rem;
 }
@@ -806,6 +834,10 @@ video {
   border-right-width: 2px;
 }
 
+.tw-border-t-\[1px\] {
+  border-top-width: 1px;
+}
+
 .tw-border-t-\[2px\] {
   border-top-width: 2px;
 }
@@ -815,13 +847,12 @@ video {
   border-color: rgb(19 6 39 / var(--tw-border-opacity));
 }
 
-.tw-bg-\[\#000000\]\/50 {
-  background-color: rgb(0 0 0 / 0.5);
+.tw-border-purple8\/25 {
+  border-color: rgb(19 6 39 / 0.25);
 }
 
-.tw-bg-\[\#2ed33e\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(46 211 62 / var(--tw-bg-opacity));
+.tw-bg-\[\#000000\]\/50 {
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .tw-bg-\[\#F8F7F1\] {
@@ -879,6 +910,10 @@ video {
   padding: 3rem;
 }
 
+.tw-p-\[3rem_2\.5rem\] {
+  padding: 3rem 2.5rem;
+}
+
 .tw-px-\[\.25rem\] {
   padding-left: .25rem;
   padding-right: .25rem;
@@ -914,6 +949,10 @@ video {
   padding-bottom: 6rem;
 }
 
+.tw-pb-\[6rem\] {
+  padding-bottom: 6rem;
+}
+
 .tw-pl-\[\.5rem\] {
   padding-left: .5rem;
 }
@@ -944,6 +983,11 @@ video {
 
 .tw-font-morphend {
   font-family: Morphend, serif;
+}
+
+.tw-text-10 {
+  font-size: 10px;
+  line-height: 20px;
 }
 
 .tw-text-100x {
@@ -995,8 +1039,16 @@ video {
   font-size: 2.6rem;
 }
 
+.\!tw-font-normal {
+  font-weight: 400 !important;
+}
+
 .tw-font-medium {
   font-weight: 500;
+}
+
+.tw-font-normal {
+  font-weight: 400;
 }
 
 .tw-font-semiBold {
@@ -1010,6 +1062,10 @@ video {
 .tw-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.tw-underline {
+  text-decoration-line: underline;
 }
 
 .tw-transition-\[max-height\] {

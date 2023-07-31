@@ -34,7 +34,7 @@ global $woocommerce;
         if(!$cat->category_parent && $image):
             $counter++;
 ?>
-            <a href=""
+            <a href="/product-category/<?php  echo $cat->slug ?>"
                 class="tw-w-full tw-h-[300px] tw-flex tw-flex-col tw-justify-end tw-bg-cover tw-bg-center tw-bg-no-repeat tw-border-purple8 tw-border-[2px] pointer"
                 style="background-image: url('<?php  echo $image ?>')">
                 <p
@@ -104,13 +104,13 @@ global $woocommerce;
 
             <div class=" tw-min-w-[300px] tw-min-h-[300px] tw-max-w-[500px] tw-max-h-[500px] tw-grid
             tw-place-items-center">
-                <div href="/product_cat/<?php  echo $cat->term_id ?>" class="tw">
+                <a href="/product-category/<?php  echo $cat->slug ?>" class="tw">
                     <img src="<?php  echo $image ?>" alt=""
                         class="tw-border-purple8 tw-border-[2px] tw-object-cover tw-w-full">
                     <div class="tw-flex tw-w-full tw-mt-[rem]">
                         <p class="tw-ml-[auto] tw-text-14 tw-font-medium"><?php  echo $cat->name ?></p>
                     </div>
-                </div>
+                </a>
             </div>
 
             <?php 
