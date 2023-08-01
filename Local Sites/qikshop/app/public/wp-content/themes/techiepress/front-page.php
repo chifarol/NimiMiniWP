@@ -7,10 +7,11 @@ $cat_class = new Nimimini\Categories();
 <?php 
 global $woocommerce;
 ?>
-<div class="tw-flex tw-flex-col tw-gap-[6rem] tw-mt-[6rem] tw-mb-[9rem]">
+<div
+    class="tw-flex tw-flex-col tw-gap-[6rem] tw-pt-[6rem] tw-mb-[9rem] md:tw-gap-[3rem] md:tw-pt-[4rem] md:tw-mb-[5rem]">
     <!-- header section -->
     <div class="">
-        <p class="tw-ml-[2.5rem] tw-text-100x tw-font-morphend tw-mb-[-3px] ">
+        <p class="tw-ml-[2.5rem] tw-text-100x tw-font-morphend tw-mb-[-3px] md:tw-ml-[1.125rem] md:tw-text-48x">
             <?php  echo bloginfo("description") ?>
         </p>
         <div class="tw-ml-[auto] tw-w-[98%] tw-h-full tw-max-h-[700px]">
@@ -19,8 +20,9 @@ global $woocommerce;
         </div>
     </div>
     <!-- shop by categories -->
-    <div class=" tw-px-[2.5rem]">
-        <div class="tw-text-60 tw-font-morphend tw-mb-[1.5rem] ">Shop By Categories</div>
+    <div class=" tw-px-[2.5rem] md:tw-px-[1rem]">
+        <div class="tw-text-60 md:tw-text-32 tw-font-morphend tw-mb-[1.5rem] md:tw-mb-[.75rem] ">Shop By
+            Categories</div>
         <div class="tw-grid tw-grid-cols-2 tw-gap-[1.5rem]">
             <?php 
     $all_categories = $cat_class->get_categories();
@@ -35,10 +37,10 @@ global $woocommerce;
             $counter++;
 ?>
             <a href="/product-category/<?php  echo $cat->slug ?>"
-                class="tw-w-full tw-h-[300px] tw-flex tw-flex-col tw-justify-end tw-bg-cover tw-bg-center tw-bg-no-repeat tw-border-purple8 tw-border-[2px] pointer"
+                class="tw-w-full tw-h-[300px] md:tw-h-[200px] tw-flex tw-flex-col tw-justify-end tw-bg-cover tw-bg-center tw-bg-no-repeat tw-border-purple8 tw-border-[2px] tw-bg-[#d1d1d1] pointer md:tw-border-[1.5px]"
                 style="background-image: url('<?php  echo $image ?>')">
                 <p
-                    class="tw-mt-[auto] tw-p-[1.5rem] tw-bg-[#000000]/50 tw-border-purple8 tw-border-t-[2px] tw-text-white tw-font-morphend tw-text-32">
+                    class="tw-mt-[auto] tw-p-[1.5rem] md:tw-p-[.75rem] tw-bg-[#000000]/50 tw-border-purple8 tw-border-t-[2px] tw-text-white tw-font-morphend tw-text-32 md:tw-text-20">
                     <?php  echo $cat->name; ?></p>
             </a>
 
@@ -52,9 +54,10 @@ global $woocommerce;
     </div>
 
     <!-- newly added -->
-    <div class=" tw-px-[2.5rem]">
-        <div class="tw-text-60 tw-font-morphend tw-mb-[1.5rem] ">Newly Added</div>
-        <div class="tw-grid tw-grid-cols-3 tw-gap-[1.5rem]">
+    <div class=" tw-px-[2.5rem] md:tw-px-[1rem]">
+        <div class="tw-text-60 md:tw-text-40 tw-font-morphend tw-mb-[1.5rem] md:tw-mb-[.75rem] ">Newly Added
+        </div>
+        <div class="tw-grid tw-grid-cols-3 tw-gap-[1.5rem] md:tw-grid-cols-2 md:tw-gap-[1rem]">
             <?php 
                 $args=[
                     "post_type"=>"product",
@@ -68,11 +71,12 @@ global $woocommerce;
                         $products->the_post();
             ?>
             <a href="<?php  echo get_permalink( $product->ID ) ?>" class="tw">
-                <div class="tw-w-full tw-h-[300px] tw-border-purple8 tw-border-[2px] tw-bg-cover tw-bg-center tw-bg-no-repeat"
+
+                <p class="tw-text-16 md:tw-text-12 tw-font-medium"><?php  the_title() ?></p>
+                <div class="tw-w-full tw-h-[300px] md:tw-h-[200px] tw-border-purple8 tw-border-[2px] tw-bg-cover tw-bg-center tw-bg-no-repeat"
                     style="background-image: url('<?php echo has_post_thumbnail( $product->ID ) ? wp_get_attachment_url(get_post_thumbnail_id($product->ID)):wc_placeholder_img_src()  ?>')">
                 </div>
-                <div class="tw-mt-[.5rem] tw-flex tw-items-center tw-gap-[2rem] tw-justify-between tw-text-16">
-                    <p class="tw-font-semiBold"><?php  the_title() ?></p>
+                <div class="tw-mt-[.5rem] tw-text-right tw-text-16 md:tw-text-12">
                     <p class="tw"><?php echo $product->get_price_html() ?></p>
                 </div>
             </a>
@@ -86,7 +90,9 @@ global $woocommerce;
 
     <!-- explore -->
     <div class=" tw-pr-[2.5rem]">
-        <div class="tw-pl-[2.5rem] tw-text-60 tw-font-morphend tw-mb-[1.5rem] ">Explore</div>
+        <div class="tw-pl-[2.5rem] tw-text-60 md:tw-text-40 tw-font-morphend tw-mb-[1.5rem] md:tw-mb-[.75rem] ">
+            Explore
+        </div>
         <div id="exploreScroll"
             class="tw-pl-[2.5rem] tw-flex tw-items-center tw-gap-[1.5rem] tw-w-full tw-overflow-x-scroll tw-py-[2rem] scroll">
             <?php 
@@ -122,7 +128,9 @@ global $woocommerce;
 
     <!-- instagram -->
     <div class="" x-date="{hx:1}">
-        <div class="tw-pl-[2.5rem] tw-text-60 tw-font-morphend tw-mb-[1.5rem] ">Instagram</div>
+        <div class="tw-pl-[2.5rem] tw-text-60 md:tw-text-40 tw-font-morphend tw-mb-[1.5rem] md:tw-mb-[.75rem] ">
+            Instagram
+        </div>
         <div class="tw-w-full tw-h-full tw-max-h-[700px]">
             <img src="<?php echo get_stylesheet_directory_uri().'/assets/images/instagram-pic.png' ?>" alt=""
                 class="tw-w-full tw-h-full tw-object-cover  tw-border-purple8 tw-border-b-[2px] tw-border-t-[2px]">

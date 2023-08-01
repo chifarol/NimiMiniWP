@@ -11,8 +11,9 @@ $footer3_menus   = wp_get_nav_menu_items( $footer3_menu_id );
  // print_r(get_registered_nav_menus())
  ?>
 
-<div class="tw-w-full tw-flex tw-gap-[1rem] tw-w-full tw-border-purple8 tw-border-t-[2px]">
-    <div class="tw-p-[3.5rem_4.5rem] tw-flex tw-gap-[2rem] tw-grow">
+<div
+    class="tw-w-full tw-flex tw-gap-[1rem] tw-w-full tw-border-purple8 tw-border-t-[2px] md:tw-flex-col md:tw-gap-0 md:tw-border-t-[1.5px]">
+    <div class="tw-p-[3.5rem_4.5rem] tw-flex tw-gap-[2rem] tw-grow md:tw-flex-col md:tw-p-[2rem_1rem]">
         <!-- footer1 -->
         <div class="tw-flex tw-flex-col tw-gap-[.125rem]">
             <?php  
@@ -88,8 +89,8 @@ $footer3_menus   = wp_get_nav_menu_items( $footer3_menu_id );
         </div>
     </div>
     <div
-        class="tw-w-full tw-max-w-[300px] tw-px-[2rem] tw-flex tw-flex-col tw-justify-center tw-border-purple8 tw-border-l-[2px] tw-text-right tw-p-[3.5rem_4.5rem]">
-        <h3 class="tw-font-morphend tw-text-32"><?php  echo bloginfo("name") ?></h3>
+        class="tw-w-full tw-max-w-[300px] tw-flex tw-flex-col tw-justify-center tw-border-purple8 tw-border-l-[2px] tw-text-right tw-p-[2rem_4.5rem] md:tw-border-t-[1.5px] md:tw-border-b-[0] md:tw-text-left md:tw-border-l-[0] md:tw-p-[2rem_1rem] md:tw-max-w-[unset]">
+        <a href="<?php echo home_url() ?>" class=" tw-font-morphend tw-text-32"><?php  echo bloginfo("name") ?></a>
         <p class="tw-text-14">© 2023 All rights reserved.</p>
     </div>
 

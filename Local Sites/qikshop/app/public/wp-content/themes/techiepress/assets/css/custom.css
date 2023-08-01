@@ -1,10 +1,15 @@
-.body {
+body {
   font-family: "Montserrat", "sans-serif";
   font-size: 14px;
+  padding-top: 4rem !important;
+
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .max-h-200 {
-  max-height: 200px;
+  max-height: 300px;
 }
 .max-h-0 {
   max-height: 0;
@@ -36,22 +41,67 @@
 .cart-customlocation {
   position: relative;
 }
-
-.scroll::-webkit-scrollbar {
-  height: 3px;
+main {
+  padding: 3rem 2.5rem;
 }
 
-.scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding: 10px 0;
-  margin: 10px 0;
+@media screen and (min-width: 700px) {
+  .scroll::-webkit-scrollbar {
+    height: 3px;
+    width: 4px;
+  }
+
+  .scroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px 0;
+    margin: 10px 0;
+  }
+
+  .scroll::-webkit-scrollbar-thumb {
+    /* box-sizing: border-box; */
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 40px;
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 20px;
+  }
 }
 
-.scroll::-webkit-scrollbar-thumb {
-  /* box-sizing: border-box; */
-  background-color: rgba(0, 0, 0, 1);
-  border-radius: 40px;
-  border-color: rgba(0, 0, 0, 0);
-  border-width: 20px;
+@media screen and (max-width: 700px) {
+  main {
+    padding: 2rem 1rem;
+  }
+  .abs-nudge-left {
+    left: 100px;
+  }
+  .tw-border-\[2px\] {
+    border-width: 1.5px !important;
+  }
+  .tw-border-b-\[2px\] {
+    border-bottom-width: 1.5px !important;
+  }
+  .tw-border-t-\[2px\] {
+    border-top-width: 1.5px !important;
+  }
+  .tw-border-r-\[2px\] {
+    border-right-width: 1.5px !important;
+  }
+  .tw-border-l-\[2px\] {
+    border-left-width: 1.5px !important;
+  }
+  .md\:tw-border-\[0\] {
+    border-width: 0 !important;
+  }
+  .md\:tw-border-b-\[0\] {
+    border-bottom-width: 0 !important;
+  }
+  .md\:tw-border-t-\[0\] {
+    border-top-width: 0 !important;
+  }
+  .md\:tw-border-r-\[0\] {
+    border-right-width: 0 !important;
+  }
+  .md\:tw-border-l-\[0\] {
+    border-left-width: 0 !important;
+  }
 }

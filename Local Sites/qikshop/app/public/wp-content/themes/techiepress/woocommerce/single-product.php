@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<div class="tw-p-[3rem_2.5rem] tw-pb-[6rem]">
+<div class="tw-pb-[6rem]">
     <?php
 		/**
 		 * woocommerce_before_main_content hook.

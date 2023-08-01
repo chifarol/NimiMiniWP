@@ -16,7 +16,12 @@ class TemplateEdits {
 
 		// single product item in loop eg related products
 		$this->ProductLoopItem_move_up_title();
+		$this->ProductLoopItem_move_down_rating();
 		$this->ProductLoopItem_move_up_addtocart();
+
+		// archive-products.php eg. search results
+		$this->ArchiveProductsLoop_move_up_notices();
+
 
 
 		// ajaxify add to cart button
@@ -48,9 +53,17 @@ class TemplateEdits {
 		remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title' );
 		add_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_title',  5 );
 	}
+	public function ProductLoopItem_move_down_rating() {
+		remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating',5 );
+		add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating',  15 );
+	}
 	public function ProductLoopItem_move_up_addtocart() {
 		remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 		add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart',  15 );
+	}
+	public function ArchiveProductsLoop_move_up_notices() {
+		remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices' );
+		add_action('woocommerce_archive_description', 'woocommerce_output_all_notices',  15 );
 	}
 
 

@@ -80,17 +80,20 @@ class Theme_Menus {
 		$minus_icon_url = get_template_directory_uri().'/assets/images/minus_icon.svg';
 		$hasChildren = $this->hasChildren($header_menu->ID, $header_menus);
         printf(
-            "<div class='tw-flex tw-flex-col tw-text-16 tw-border-purple8 tw-border-t-[2px]' 
+            "<div class='tw-flex tw-flex-col tw-text-16 md:tw-text-14 tw-border-purple8 tw-border-t-[2px]' 
 			 >	
             <div class='tw-w-full tw-flex tw-items-center tw-gap-[2rem] tw-justify-between tw-py-[.75rem] '
-			@click='
-			activeArray.includes(%s) ? 
-			activeArray=activeArray.filter(item=>item!==%s) : 
-			activeArray.push(%s);
-			console.log(activeArray)'
+			
 			>
 				%s
+
+				<div @click='
+				activeArray.includes(%s) ? 
+				activeArray=activeArray.filter(item=>item!==%s) : 
+				activeArray.push(%s);
+				console.log(activeArray)'>
                 %s
+				</div>
 			
             </div>
 			<div class='tw-flex tw-flex-col tw-pl-[.5rem] nav-h-transition overflow-y-hidden' 
@@ -99,10 +102,10 @@ class Theme_Menus {
 			`max-h-0` '
 			 >
             ",
+			"<a href=' $header_menu->url' class=''>   $header_menu->title </a>",
             $header_menu->ID,
             $header_menu->ID,
             $header_menu->ID,
-			$hasChildren ? "<p>  $header_menu->title  </p>" : "<a href=' $header_menu->url' class=''>   $header_menu->title </a>",
             $hasChildren ? "<img src='$plus_icon_url' alt='' class='tw-h-16' x-bind:src='activeArray.includes($header_menu->ID) ? `$minus_icon_url` : `$plus_icon_url`' >" : "",
             $header_menu->ID,
         );

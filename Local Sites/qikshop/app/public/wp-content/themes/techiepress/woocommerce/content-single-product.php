@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'tw-mt-[1.5rem]', $product ); ?>>
-    <div class="tw-grid tw-grid-cols-2 tw-gap-[3rem] tw-mb-[1.5rem]">
+    <div class="tw-grid tw-grid-cols-2 tw-gap-[3rem] tw-mb-[1.5rem] md:tw-grid-cols-1 md:tw-gap-[1.5rem] ">
         <?php
 		/**
 		 * Hook: woocommerce_before_single_product_summary.

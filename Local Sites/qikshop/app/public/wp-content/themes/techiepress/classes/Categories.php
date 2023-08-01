@@ -25,24 +25,9 @@ class Categories {
 		$all_categories = get_categories( $args );
 		return $all_categories;
 	}
-	public function get_child_menu_items( $menu_array, $parent_id ) {
-
-		$child_menus = [];
-
-		if ( ! empty( $menu_array ) && is_array( $menu_array ) ) {
-
-			foreach ( $menu_array as $menu ) {
-				if ( intval( $menu->menu_item_parent ) === $parent_id ) {
-					array_push( $child_menus, $menu );
-				}
-			}
-		}
-
-		return $child_menus;
-	}
 	public function display_children( $category, $categories) {
             if($this->hasChildren( $category->term_id,$categories)):
-                // echo "<div>$header_menu->title</div>";
+                // echo "<div>$category->title</div>";
                 echo $category->name.' - ';
 				$this->display_children( $this->get_children($category->term_id,$categories),$categories);
             endif;
@@ -73,7 +58,7 @@ class Categories {
 		// print_r( $categories[0]);
 		echo $category->name;
 		if($this->hasParents( $category->category_parent,$categories)):
-			// echo "<div>$header_menu->title</div>";
+			// echo "<div>$category->title</div>";
 			echo '->';
 			$parent = $this->getParents($category->category_parent,$categories);
 			$this->displayParents($parent,$categories);
@@ -98,6 +83,69 @@ class Categories {
 	   }
         foreach ($categories as $cat) :
             if($cat->term_id == $target_id):
+                $holder = true;
+            endif;
+        endforeach;
+
+		return $holder;
+        
+    }
+
+
+	// category page sidebar function
+
+	public function Sidebar_menuitembox( $category,$categories) {
+		$plus_icon_url = get_template_directory_uri().'/assets/images/plus_icon.svg';
+		$minus_icon_url = get_template_directory_uri().'/assets/images/minus_icon.svg';
+		$hasChildren = $this->Sidebar_hasChildren($category->term_id, $categories);
+        printf(
+            "<div class='tw-flex tw-flex-col tw-text-16 tw-border-purple8 tw-border-t-[2px] tw-w-full' 
+			 >	
+            <div class='tw-w-full tw-flex tw-items-center tw-gap-[2rem] tw-justify-between tw-py-[.75rem] '
+			>
+				%s
+                <div @click='
+                activeArray.includes(%s) ? 
+                activeArray=activeArray.filter(item=>item!==%s) : 
+                activeArray.push(%s);
+                console.log(activeArray)'>
+                %s
+                </div>
+                
+			
+            </div>
+			<div class='tw-flex tw-flex-col tw-pl-[.5rem] nav-h-transition overflow-y-hidden' 
+			:class='activeArray.includes(%s) ? 
+			`max-h-200` :
+			`max-h-0` '
+			 >
+            ",
+			"<a href='/product-category/$category->slug' class=''>   $category->name </a>",
+            $category->term_id,
+            $category->term_id,
+            $category->term_id,
+            $hasChildren ? "<img src='$plus_icon_url' alt='' class='tw-h-16 pointer' x-bind:src='activeArray.includes($category->term_id) ? `$minus_icon_url` : `$plus_icon_url`' >" : "",
+            $category->term_id,
+        );
+
+        $this->Sidebar_display_children($category->term_id,$categories);
+
+        echo "</div> </div>";
+    }
+	public function Sidebar_display_children( $parent_id, $categories) {
+        foreach ($categories as $category) :
+            if($category->category_parent == $parent_id):
+                // echo "<div>$category->title</div>";
+                $this->Sidebar_menuitembox($category,$categories);
+        
+            endif;
+        endforeach;
+        
+    }
+	public function Sidebar_hasChildren( $parent_id, $categories) {
+       $holder = false;
+        foreach ($categories as $category) :
+            if($category->category_parent == $parent_id):
                 $holder = true;
             endif;
         endforeach;
